@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @cloudpost.name %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @cloudpost.content %>
+</p>
+
+
+<%= link_to 'Edit', edit_cloudpost_path(@cloudpost) %> |
+<%= link_to 'Back', cloudposts_path %>

@@ -1,0 +1,23 @@
+<h1>All Cloudposts</h1>
+
+
+<% @cloudposts.each do |cloudpost| %>
+	<div class="cloudpost">
+
+  	<strong><%= cloudpost.name %></strong>
+  	<p><%= cloudpost.content %><p>
+	
+		<div class="meta">
+			<%= link_to time_ago_in_words(cloudpost.created_at) + " ago", cloudpost %>
+		
+		<span class="admin">
+			| <%= link_to 'Edit', edit_cloudpost_path(cloudpost) %> |
+    <%= link_to 'Remove', cloudpost, method: :delete, data: { confirm: 'Are you sure?' } %>
+		</span>
+		</div>
+	</div>
+<% end %>
+
+<br />
+
+<div class="btn"><%= link_to 'New Cloudpost', new_cloudpost_path %></div>
