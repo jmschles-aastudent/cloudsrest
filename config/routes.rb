@@ -1,5 +1,8 @@
 Cloudsrest::Application.routes.draw do
+  resources :tours
+
   resources :cloudposts
+  root to: 'cloudposts#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

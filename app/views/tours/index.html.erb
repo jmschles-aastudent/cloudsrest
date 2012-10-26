@@ -1,0 +1,48 @@
+<h2>Upcoming Shows</h2>
+
+
+
+<div class="gighead row">
+		<div class="span2">
+			<strong>Date</strong>
+		</div>
+		<div class="span1">
+			<strong>Time</strong>
+		</div>
+		<div class="span3">
+			<strong>Venue</strong>
+		</div>
+		<div class="span2">
+			<strong>City</strong>
+		</div>
+		<div class="span4">
+			<strong>Notes</strong>
+		</div>
+	</div>
+
+<% @tours.each do |tour| %>
+	<div class="gig row">
+		<div class="span2">
+			<%= tour.date.strftime("%m/%d/%y") %>
+		</div>
+		<div class="span1">
+			<%= tour.time.strftime("%l:%M %P") %>
+		</div>
+		<div class="span3">
+			<%= tour.venue %>
+		</div>
+		<div class="span2">
+			<%= tour.city %>
+		</div>
+		<div class="span4">
+			<%= tour.notes %>
+		</div>
+	</div>
+<% end %>
+
+
+<br />
+
+<div class="btn btn-primary">
+<%= link_to 'Create New Gig', new_tour_path %>
+</div>
